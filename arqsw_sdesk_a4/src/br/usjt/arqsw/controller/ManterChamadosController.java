@@ -18,7 +18,7 @@ import br.usjt.arqsw.service.ChamadoService;
 import br.usjt.arqsw.service.FilaService;
 /**
  * 
- * @author Accel Gustavo Araújo Rocha	RA81616654	SI3AN-MCA
+ * @author Accel Gustavo Araújo Rocha - RA:81616654 - SIN3AN-MCA
  *
  */
 @Transactional

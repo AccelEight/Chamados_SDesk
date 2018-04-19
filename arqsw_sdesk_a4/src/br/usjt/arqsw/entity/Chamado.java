@@ -1,7 +1,6 @@
 package br.usjt.arqsw.entity;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+/**
+ * 
+ * @author  Accel Gustavo Araújo Rocha - RA:81616654 - SIN3AN-MCA
+ *
+ */
 @Entity
 public class Chamado {
 	@Id
@@ -19,10 +24,12 @@ public class Chamado {
 	@Column(name="id_chamado")
 	private int numero;
 	
+	@JsonFormat(pattern="dd-MM-yyyy")
 	@NotNull
 	@Column(name="dt_abertura")
 	private Date dataAbertura;
 	
+	@JsonFormat(pattern="dd-MM-yyyy")
 	@Column(name="dt_fechamento")
 	private Date dataFechamento;
 	

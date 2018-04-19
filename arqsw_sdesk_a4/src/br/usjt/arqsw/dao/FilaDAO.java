@@ -11,6 +11,11 @@ import org.springframework.stereotype.Repository;
 import br.usjt.arqsw.entity.Fila;
 @Repository
 public class FilaDAO {
+	/**
+	 * 
+	 * @author  Accel Gustavo Araújo Rocha - RA:81616654 - SIN3AN-MCA
+	 *
+	 */
 	@PersistenceContext
 	EntityManager manager;
 	
@@ -21,4 +26,14 @@ public class FilaDAO {
 	public Fila carregar(int id) throws IOException {
 		return manager.find(Fila.class, id);
 	}
+	
+	public void criarFila(Fila fila){
+		manager.persist(fila);
+	}
+	
+	public void fecharFila(Fila fila){
+		manager.remove(fila);
+	}
+	
+	
 }

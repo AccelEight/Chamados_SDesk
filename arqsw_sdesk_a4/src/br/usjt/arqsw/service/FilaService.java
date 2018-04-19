@@ -9,7 +9,11 @@ import org.springframework.stereotype.Service;
 
 import br.usjt.arqsw.dao.FilaDAO;
 import br.usjt.arqsw.entity.Fila;
-
+/**
+ * 
+ * @author  Accel Gustavo Araújo Rocha - RA:81616654 - SIN3AN-MCA
+ *
+ */
 @Service
 public class FilaService {
 	private FilaDAO dao;
@@ -23,5 +27,13 @@ public class FilaService {
 	}
 	public Fila carregar(int id) throws IOException{
 		return dao.carregar(id);
+	}
+	
+	public void criar(Fila f){
+		dao.criarFila(f);
+	}
+	
+	public void fechar(Fila f){
+		dao.fecharFila(f);
 	}
 }

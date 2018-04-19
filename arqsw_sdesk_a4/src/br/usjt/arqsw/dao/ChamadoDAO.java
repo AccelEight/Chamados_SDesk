@@ -1,6 +1,7 @@
 package br.usjt.arqsw.dao;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,11 @@ import org.springframework.stereotype.Repository;
 
 import br.usjt.arqsw.entity.Chamado;
 import br.usjt.arqsw.entity.Fila;
+/**
+ * 
+ * @author  Accel Gustavo Araújo Rocha - RA:81616654 - SIN3AN-MCA
+ *
+ */
 @Repository
 public class ChamadoDAO {
 	@PersistenceContext

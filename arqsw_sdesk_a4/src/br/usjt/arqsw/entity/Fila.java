@@ -9,6 +9,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 @Entity
 public class Fila {
+	/**
+	 * 
+	 * @author  Accel Gustavo Araújo Rocha - RA:81616654 - SIN3AN-MCA
+	 *
+	 */
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_fila")

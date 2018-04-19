@@ -11,22 +11,29 @@ import org.springframework.stereotype.Service;
 import br.usjt.arqsw.dao.ChamadoDAO;
 import br.usjt.arqsw.entity.Chamado;
 import br.usjt.arqsw.entity.Fila;
-
+/**
+ * 
+ * @author  Accel Gustavo Araújo Rocha - RA:81616654 - SIN3AN-MCA
+ *
+ */
 @Service
 public class ChamadoService {
 	ChamadoDAO dao;
+	FilaService fService;
 	
 	@Autowired
-	public ChamadoService(ChamadoDAO dao){
+	public ChamadoService(ChamadoDAO dao, FilaService fs){
 		this.dao = dao;
+		this.fService = fs;
 	}
-	
+
 	public int novoChamado(Chamado chamado) throws IOException{
 		chamado.setDataAbertura(new Date());
 		chamado.setDataFechamento(null);
 		chamado.setStatus(Chamado.ABERTO);
-		return -1;
-		//return dao.inserirChamado(chamado);
+		Fila fila = fService.carregar(chamado.getFila().getId());
+		chamado.setFila(fila);
+		return dao.inserirChamado(chamado);
 	}
 	
 	public List<Chamado> listarChamados(Fila fila) throws IOException{
